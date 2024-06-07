@@ -28,12 +28,12 @@ const userSchema = new mongoose.Schema({
 });
 
 // Define a model
-const Item = mongoose.model('User', userSchema);
+const User = mongoose.model('User', userSchema);
 
 // GET endpoint to fetch all items
 app.get('/users', async (req, res) => {
   try {
-    const items = await Item.find();
+    const items = await User.find();
     res.status(200).json(items);
   } catch (error) {
     res.status(500).json({ message: error.message });
